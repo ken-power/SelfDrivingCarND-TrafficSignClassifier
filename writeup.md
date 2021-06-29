@@ -80,7 +80,7 @@ Here is the final model summary:
 ![alt text][image3]
 
 
-This graph shows the model layers in more detail:
+This graph, which I generated using the `keras_visualizer` library, shows the model layers in more detail:
  
 ![alt text][image2]
 
@@ -115,10 +115,11 @@ My final model results scored a training set accuracy of 97.43%, as shown here:
 
 ![](Images/writeup/training_val_accuracy.png)
 
-I chose the LeNet-5 architecture, shown here:
+I chose the LeNet-5 architecture ([LeCun, 1998](#References)), shown here, as a starting point for designing my classifier:
 
 ![LeNet](Images/LeNet-5-CNN-architecture.png)
 
+This CNN architecture was originally used for classifying hand-writren digits. I was able to use the same basic architecture, with some modifications (highlihgted in the [notebook](Traffic_Sign_Classifier.ipynb)) to classify traffic signs. My final CNN model architecture is [shown above](#design-and-test-a-model-architecture).
 
 ### Test a Model on New Images
 
@@ -126,10 +127,9 @@ I chose the LeNet-5 architecture, shown here:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![Test images from the Web](Images/writeup/test_images.png)
 
-The first image might be difficult to classify because the sign occupies only part of the image - trees occupy a lot of the background.
+The Yield sign might be difficult to classify because the sign occupies only part of the image - trees occupy a lot of the background.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
