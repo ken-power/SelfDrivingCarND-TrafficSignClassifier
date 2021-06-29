@@ -36,7 +36,7 @@ I used the following primary libraries:
 * pandas
 * matplotlib
 
-The [requirements.txt](requirements.txt) contains a full listing of the dependencies I used, and can be usedto create a local virtual environment in which the notebook will run.
+The [requirements.txt](requirements.txt) contains a full listing of the dependencies I used, and can be used to create a local virtual environment in which the notebook will run.
 
 ---
 
