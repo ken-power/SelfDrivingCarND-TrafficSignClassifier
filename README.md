@@ -18,7 +18,7 @@ Project output:
 * The project report is in [writeup.md](writeup.md).
 
 
-My classifer has a validation accuracy of 97.43%, and correctly clasifies 100% of the previously-unseen test images.
+My classifier has a validation accuracy of 97.43%, and correctly classifies 100% of the previously-unseen test images.
 
 ![](Images/writeup/training_val_accuracy.png)
 
@@ -26,7 +26,7 @@ The [notebook](Traffic_Sign_Classifier.ipynb) provides more detail on the design
 
 ### Running the code
 
-The [Traffic_Sign_Classifier.ipynb notebook](Traffic_Sign_Classifier.ipynb)contains all the code for this project.
+The [Traffic_Sign_Classifier.ipynb notebook](Traffic_Sign_Classifier.ipynb) contains all the code for this project.
 
 I used the following primary libraries:
 * TensorFlow (version 2.5.0)
