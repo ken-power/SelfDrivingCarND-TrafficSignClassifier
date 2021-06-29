@@ -45,6 +45,8 @@ You're reading it! And here is a link to my [project code](Traffic_Sign_Classifi
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
+The dataset [can be downloaded from here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic-signs-data.zip). This is a pickled dataset in which the images are already resized to 32x32.
+
 I used the `pandas` library to calculate summary statistics of the traffic
 signs data set:
 
@@ -56,7 +58,7 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. It is a bar chart showing the distribution of the data among the 43 different traffic signs.
 
 ![alt text][image1]
 
@@ -72,6 +74,37 @@ Before | Grey | Equalized
 :---:|:---:|:---:
 ![alt text][image10]|![alt text][image11]|![alt text][image12]
 
+Data should be formatted into appropriately preprocessed floating-point tensors before being fed into the network. Currently, the data sits on a drive as JPEG files, so the steps for getting it into the network are roughly as follows ([Chollet, 2018](#References)):
+1. Read the picture files.
+2. Decode the JPEG content to RGB grids of pixels.
+3. Convert these into floating-point tensors.
+4. Rescale the pixel values (between 0 and 255) to the [0, 1] interval (neural networks prefer to deal with small input values).
+
+Keras has utilities to take care of these steps automatically. The Keras module `keras.preprocessing.image` contains image-processing helper tools. In particular, it contains the class `ImageDataGenerator`, which lets us quickly set up Python generators that can automatically turn image files on disk into batches of preprocessed tensors. 
+
+This is an example, taken from my [notebook](Traffic_Sign_Classifier.ipynb), of how my project uses the `ImageDataGenerator`:
+
+```python
+from keras.preprocessing.image import ImageDataGenerator
+
+train_datagen = ImageDataGenerator(width_shift_range=0.1, #10% of the image width
+                             height_shift_range=0.1,
+                             zoom_range=0.2,
+                             shear_range=0.1,
+                             rotation_range=10
+                            )
+```
+Later, [my notebook](Traffic_Sign_Classifier.ipynb) shows how I use the output of the gnerator to train the model:
+
+```python
+train_generator = train_datagen.flow(X_train_preprocessed, y_train, batch_size=batch_size)
+
+history = model.fit(train_generator,
+                    steps_per_epoch=steps_per_epoch, 
+                    epochs=12,
+                    validation_data=val_generator,
+                    validation_steps=validation_steps)
+```
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -170,6 +203,10 @@ No passing for vehicles over 3.5 metric tons | 0.0014847544
 Roundabout mandatory | 0.0011904315
 
 The [notebook](Traffic_Sign_Classifier.ipynb) and [HTML output](Traffic_Sign_Classifier.html) contain the Top 5 softmax probabilities for all images.
+
+The following bar chart summarises the Top 5 Softmax probabilities for each traffic sign:
+
+![Top 5 Softax bar chart](Images/writeup/softmax_barchart.png)
 
 
 #### 4. Example of where the model struggles: Bicycle Crossing signs
