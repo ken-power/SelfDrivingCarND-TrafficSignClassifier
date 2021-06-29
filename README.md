@@ -13,7 +13,7 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 Project output:
-* All the code for this project is in the [Traffic_Sign_Classifier.ipynb](Traffic_Sign_Classifier.ipynb) noebook.
+* All the code for this project is in the [Traffic_Sign_Classifier.ipynb](Traffic_Sign_Classifier.ipynb) notebook.
 * The file [Traffic_Sign_Classifier.html](Traffic_Sign_Classifier.html) contains a HTML export of the notebook for online viewing.
 * The project report is in [writeup.md](writeup.md).
 
@@ -23,6 +23,20 @@ My classifer has a validation accuracy of 97.43%, and correctly clasifies 100% o
 ![](Images/writeup/training_val_accuracy.png)
 
 The [notebook](Traffic_Sign_Classifier.ipynb) provides more detail on the design of the CNN classifier, and the results.
+
+### Running the code
+
+The [Traffic_Sign_Classifier.ipynb notebook](Traffic_Sign_Classifier.ipynb)contains all the code for this project.
+
+I used the following primary libraries:
+* TensorFlow (version 2.5.0)
+* Keras (version 2.4.3)
+* OpenCV (version 4.5.1)
+* numpy
+* pandas
+* matplotlib
+
+The [requirements.txt](requirements.txt) contains a full listing of the dependencies I used, and can be usedto create a local virtual environment in which the notebook will run.
 
 ---
 
