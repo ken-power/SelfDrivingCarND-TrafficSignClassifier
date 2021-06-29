@@ -12,13 +12,18 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-All the code for this project is in the [Traffic_Sign_Classifier.ipynb](Traffic_Sign_Classifier.ipynb) noebook.
+Project output:
+* All the code for this project is in the [Traffic_Sign_Classifier.ipynb](Traffic_Sign_Classifier.ipynb) noebook.
+* The file [Traffic_Sign_Classifier.html](Traffic_Sign_Classifier.html) contains a HTML export of the notebook for online viewing.
+* The project report is in [writeup.md](writeup.md).
 
-The file [Traffic_Sign_Classifier.html](Traffic_Sign_Classifier.html) contains a HTML export of the notebook for online viewing.
 
 My classifer has a validation accuracy of 97.43%, and correctly clasifies 100% of the previously-unseen test images.
+
 ![](Images/writeup/training_val_accuracy.png)
 
-The project report is in [writeup.md](writeup.md).
+The [notebook](Traffic_Sign_Classifier.ipynb) provides more detail on the design of the CNN classifier, and the results.
+
+---
 
 ![](Images/writeup/layer1_viz.png)
