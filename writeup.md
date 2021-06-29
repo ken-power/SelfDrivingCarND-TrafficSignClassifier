@@ -87,8 +87,6 @@ This graph, which I generated using the `keras_visualizer` library, shows the mo
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
-
 I used these hyperparameters to tune my model:
 ```python
 # hyperparameters - adjust these to obtain optimal performance
@@ -176,12 +174,14 @@ The [notebook](Traffic_Sign_Classifier.ipynb) and [HTML output](Traffic_Sign_Cla
 
 #### 4. Example of where the model struggles: Bicycle Crossing signs
 
-I noticed during training and testing the model that it performs poorly on bicycle crossing signs. I found these five images of bicycle crossing signs on the Web, and tested the classifer on them.
+The training accuracy for the model was 97.43%, which still leaves some room for error. I noticed during training and testing the model that it performs poorly on bicycle crossing signs. I found these five images of bicycle crossing signs on the Web, and tested the classifer on them.
 
 ![](Images/writeup/bicycle_crossing.png)
 
 The results show that the classifier has difficulty classifying bicycle crossing signs correctly.
 Looking at the Top 5 softmax probabilities for each sign: in this latest run only one of the images contain bicycle crossing in their Top 5 Softmax probabilities.
+
+One factor here is the number of training samples. Looking at the dataset, bicycle crossing signs are among the signs with the fewest training images: 240 for bicycle crossing compared with 1980 and 2010 respectively for 30km/hr and 50km/hr traiffic signs. So, one remedy could be to use more training samples of bicycle crossing signs.
 
 The [notebook](Traffic_Sign_Classifier.ipynb) has more details on this analysis.
 
